@@ -22,3 +22,9 @@ jobs:
           dotnet workload install maui --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
           dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --source https://pkgs.dev.azure.com/dnceng/public/_packaging/dotnet7/nuget/v3/index.json --source https://api.nuget.org/v3/index.json
     
+    - name : Build MacCatalyst App
+      shell: bash
+      run: |
+          cd MauiGithubActionsSample
+          dotnet build -f net7.0-maccatalyst -c Release -o ./artifacts
+          dotnet publish -f net7.0-maccatalyst -c Release -p:BuildIpa=True -o ./artifacts
