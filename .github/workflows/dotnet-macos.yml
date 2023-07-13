@@ -28,8 +28,8 @@ jobs:
       - name : Build MacCatalyst App
         shell: bash
         run: |
-          dotnet build -f net7.0-maccatalyst -c Release -o ./artifacts
-          dotnet publish -f net7.0-maccatalyst -c Release -p:BuildIpa=True -o ./artifacts
+          dotnet build -f net6.0-maccatalyst -c Release -o ./artifacts
+          dotnet publish -f net6.0-maccatalyst -c Release -p:BuildIpa=True -o ./artifacts
 
 #       - name: Build and Run UnitTests
 #         shell: bash
